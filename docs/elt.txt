@@ -1,0 +1,10 @@
+Processo do Pipeline ELT (ELT.ipynb)
+Extração (E): O script Python lê os arquivos .csv brutos da pasta local sem realizar nenhuma limpeza ou filtro nos dados.
+
+Carga (L): Os dados são injetados 100% brutos diretamente no PostgreSQL, populando uma tabela de transição chamada Staging Area (stg_samp_bruto).
+
+Transformação (T): Com os dados já guardados no banco, o Python envia comandos em SQL Nativo para o motor do PostgreSQL fazer o trabalho pesado.
+
+Queries com DISTINCT, UPPER e TRIM criam e limpam as dimensões (dim_tempo_elt, dim_distribuidora_elt, dim_acessante_elt, dim_mercado_elt).
+
+Uma query final com LEFT JOIN cruza a tabela bruta com as dimensões para gerar a tabela fato (fato_energia_elt), processando com sucesso todas as 3.029.329 linhas direto no SGBD.
