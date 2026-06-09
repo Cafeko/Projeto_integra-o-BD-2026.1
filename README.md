@@ -51,11 +51,18 @@ O Data Warehouse final está estruturado com a seguinte granularidade:
 2. Crie um ambiente virtual e instale as dependências:
    ```bash
    pip install pandas sqlalchemy psycopg2-binary
+3. Extraia os arquivos de ".rar" que contem os arquivos .csv com os dados.
 
 ### Passo 2: Execução da Carga (ETL)
 1. Abra o arquivo ETL.ipynb no VS Code.
-2. No primeiro bloco de código, atualize as credenciais do PostgreSQL (usuario_db, senha_db, etc.) com os dados da sua máquina local.
+2. Va até o topico 7, no bloco de código que tem "#Preencher com suas informações do Postgre", atualize as credenciais do PostgreSQL (usuario_db, senha_db, etc.) com os dados da sua máquina local.
 3. Execute todas as células. O script cuidará da limpeza e criará as 6 tabelas finais no seu banco de dados.
+
+### Passo 3: Execução da Carga (ELT)
+1. Abra o arquivo ELT.ipynb no VS Code.
+2. Va até o topico 3, no bloco de código que tem "#Preencher com suas informações do Postgre", atualize as credenciais do PostgreSQL (usuario_db, senha_db, etc.) com os dados da sua máquina local.
+3. Execute todas as células. O script cuidará da limpeza e ira mandas a tabela com os dados para o seu banco de dados.
+4. Execute o arquivo tratamento.sql, que ira fazer as transformações e criar as tabelas tratadas.
 
 ## Resultados e Insights
 
@@ -66,9 +73,9 @@ As consultas SQL localizadas na pasta /analysis demonstram o poder do modelo con
 
 ## Equipe
     
-    Dyego Ferreira da Silva            - dfs10
-    Caio Ferreira Gomes da Silva       - cfgs
-    Júlio Cesar da Silva               - jcs8
-    Anysabele de Paula Barbosa Santos  - apbs2
-    Jairo Cândido Gonzaga Neto         - jcgn
-    Vinicius guedes de macedo          - Vgm
+    Dyego Ferreira da Silva            - Login: dfs10 - Github: dyegoferreiradev
+    Caio Ferreira Gomes da Silva       - Login: cfgs  - Github: Cafeko
+    Júlio Cesar da Silva               - Login: jcs8  - Github: Juliofat
+    Anysabele de Paula Barbosa Santos  - Login: apbs2 - Github: anysabele
+    Jairo Cândido Gonzaga Neto         - Login: jcgn  - Github: JairoGonzaga
+    Vinicius guedes de macedo          - Login: Vgm   - Github: Vinícius Macêdo
