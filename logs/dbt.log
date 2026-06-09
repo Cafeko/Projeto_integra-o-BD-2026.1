@@ -1,0 +1,109 @@
+==================== 2026-06-09T02:32:52.541277Z | 019eaa39-c23a-7870-a258-494370e2ba11 ====================
+02:32:52.541439 [info ]: Installing dbt project and profile setup
+02:32:52.580560 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+02:32:52.581436 [info ]: Success Project created successfully!
+02:32:52.581680 [info ]: Info Project name: jaffle_shop
+02:32:52.582176 [info ]: Info Project directory: jaffle_shop
+02:32:52.582399 [info ]: Info Setting up your profile...
+02:32:52.582758 [info ]: Info Creating new profile...
+02:32:59.008883 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+02:34:05.710648 [info ]: Success Profile written to C:\Users\jairoNeto\.dbt\profiles.yml
+02:34:05.710789 [info ]: Validating profile inputs, adapters, and connection
+
+02:34:05.710920 [info ]: dbt-core 2.0.0-alpha.1
+02:34:05.711321 [info ]: Started loading project
+02:34:05.713064 [info ]: Loading ~/.dbt/profiles.yml
+02:34:05.718077 [info ]: Finished loading project [  0.01s]
+02:34:05.718261 [error]: [InvalidConfig (dbt1005)]: The 'postgres' adapter is not yet supported by dbt Fusion. Supported adapters: snowflake, bigquery, databricks, redshift
+02:34:05.914493 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [1m 13s]
+[0m23:35:13.735828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192B6E92120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192B3903110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192B8FF3ED0>]}
+
+
+============================== 23:35:13.741640 | 9a229b7e-19b7-44e1-b182-eda2eb6c1c5d ==============================
+[0m23:35:13.741640 [info ] [MainThread]: Running with dbt=1.11.11
+[0m23:35:13.742253 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\jairoNeto\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:35:18.223606 [debug] [MainThread]: Starter project path: C:\Users\jairoNeto\anaconda3\Lib\site-packages\dbt\include\starter_project
+[0m23:35:18.248163 [info ] [MainThread]: 
+Your new dbt project "local" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:35:18.248688 [info ] [MainThread]: Setting up your profile.
+[0m23:35:41.658246 [info ] [MainThread]: Profile local written to C:\Users\jairoNeto\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:35:41.659857 [debug] [MainThread]: Command `dbt init` succeeded at 23:35:41.659385 after 28.03 seconds
+[0m23:35:41.660202 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192B91DC8A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192B90BD7F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192B9035BF0>]}
+[0m23:35:41.660553 [debug] [MainThread]: Flushing usage events
+[0m23:35:42.184261 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:36:16.296549 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019738CA2120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019735753110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001973AE03ED0>]}
+
+
+============================== 23:36:16.300776 | 31c60c79-02ef-4f47-a87a-8582a295eb7b ==============================
+[0m23:36:16.300776 [info ] [MainThread]: Running with dbt=1.11.11
+[0m23:36:16.301446 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\jairoNeto\\.dbt', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:36:16.322523 [info ] [MainThread]: dbt version: 1.11.11
+[0m23:36:16.322993 [info ] [MainThread]: python version: 3.13.5
+[0m23:36:16.323416 [info ] [MainThread]: python path: C:\Users\jairoNeto\anaconda3\python.exe
+[0m23:36:16.323821 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m23:36:16.379402 [info ] [MainThread]: Using profiles dir at C:\Users\jairoNeto\.dbt
+[0m23:36:16.379914 [info ] [MainThread]: Using profiles.yml file at C:\Users\jairoNeto\.dbt\profiles.yml
+[0m23:36:16.380314 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\jairoNeto\Desktop\ss\dbt_project.yml
+[0m23:36:16.380676 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m23:36:16.381598 [debug] [MainThread]: Command `dbt debug` failed at 23:36:16.381483 after 0.21 seconds
+[0m23:36:16.381918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001973AFE95B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001973AFF1D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001973AFBCC00>]}
+[0m23:36:16.382329 [debug] [MainThread]: Flushing usage events
+[0m23:36:16.895904 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:37:13.295357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC07602120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC04073110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC09763ED0>]}
+
+
+============================== 23:37:13.299581 | 3a48d8aa-e768-45c4-b1a6-710e5108b4e0 ==============================
+[0m23:37:13.299581 [info ] [MainThread]: Running with dbt=1.11.11
+[0m23:37:13.300222 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\jairoNeto\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:37:13.319922 [info ] [MainThread]: dbt version: 1.11.11
+[0m23:37:13.320412 [info ] [MainThread]: python version: 3.13.5
+[0m23:37:13.320824 [info ] [MainThread]: python path: C:\Users\jairoNeto\anaconda3\python.exe
+[0m23:37:13.321204 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m23:37:13.377164 [info ] [MainThread]: Using profiles dir at C:\Users\jairoNeto\.dbt
+[0m23:37:13.377682 [info ] [MainThread]: Using profiles.yml file at C:\Users\jairoNeto\.dbt\profiles.yml
+[0m23:37:13.378090 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\jairoNeto\Desktop\ss\dbt_project.yml
+[0m23:37:13.378513 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m23:37:13.379471 [debug] [MainThread]: Command `dbt debug` failed at 23:37:13.379353 after 0.19 seconds
+[0m23:37:13.379798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC0997D5B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC09985D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AC0994D260>]}
+[0m23:37:13.380143 [debug] [MainThread]: Flushing usage events
+[0m23:37:13.911558 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:37:23.762706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F87A3C2120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F876E53110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F87C523ED0>]}
+
+
+============================== 23:37:23.766903 | 4175050d-9562-407d-a5c0-0d7f4a8b3014 ==============================
+[0m23:37:23.766903 [info ] [MainThread]: Running with dbt=1.11.11
+[0m23:37:23.767546 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\jairoNeto\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:37:23.786647 [info ] [MainThread]: dbt version: 1.11.11
+[0m23:37:23.787170 [info ] [MainThread]: python version: 3.13.5
+[0m23:37:23.787522 [info ] [MainThread]: python path: C:\Users\jairoNeto\anaconda3\python.exe
+[0m23:37:23.787900 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m23:37:23.844698 [info ] [MainThread]: Using profiles dir at C:\Users\jairoNeto\.dbt
+[0m23:37:23.845192 [info ] [MainThread]: Using profiles.yml file at C:\Users\jairoNeto\.dbt\profiles.yml
+[0m23:37:23.845546 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\jairoNeto\Desktop\ss\dbt_project.yml
+[0m23:37:23.845913 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m23:37:23.846845 [debug] [MainThread]: Command `dbt debug` failed at 23:37:23.846730 after 0.19 seconds
+[0m23:37:23.847169 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F87C7BD5B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F87C7C5D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F87C78D260>]}
+[0m23:37:23.847555 [debug] [MainThread]: Flushing usage events
+[0m23:37:24.352449 [debug] [MainThread]: An error was encountered while trying to flush usage events

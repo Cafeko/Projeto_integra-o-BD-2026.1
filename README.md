@@ -25,9 +25,12 @@ O projeto constrói o mesmo modelo final através de caminhos distintos para fin
 * **Transformação (Em Memória):** Higienização pesada utilizando as bibliotecas nativas do Python (ex: `unicodedata` para remoção de acentos), padronização em caixa alta (`.str.upper()`) e modelagem do Esquema Estrela separando o dataframe principal em Fatos e Dimensões.
 * **Carga:** Injeção das tabelas modeladas e limpas diretamente no PostgreSQL via `sqlalchemy`.
 
-### 2. Abordagem ELT (SQL Driven)
-* **Extração e Carga:** Leitura bruta dos dados e injeção direta no PostgreSQL sem tratamento (`raw data`).
-* **Transformação (In-Database):** Execução de scripts SQL para limpar, normalizar e modelar os dados utilizando o poder de processamento do próprio motor de banco de dados.
+### 2. Abordagem ELT (SQL Driven com dbt)
+* **Extração e Carga:** Leitura bruta dos dados e injeção direta no PostgreSQL sem tratamento (`raw data`) via notebook Python.
+* **Transformação (In-Database com dbt):** As transformações são orquestradas pelo **dbt (data build tool)**, que executa os modelos SQL em cadeia respeitando dependências automaticamente. A pipeline segue três camadas:
+  * **Staging** (`stg_bronze`): view sobre a tabela bruta `Dados_Bronze`.
+  * **Intermediate** (`int_silver`): limpeza completa — remoção de duplicatas, trim, upper, unaccent, cast de tipos, preenchimento de nulos e geração de surrogate keys para agentes acessantes.
+  * **Marts** (`dim_*` + `fato_energia`): construção do Esquema Estrela a partir da camada silver.
 
 ## Modelagem Dimensional (Star Schema)
 
@@ -50,19 +53,26 @@ O Data Warehouse final está estruturado com a seguinte granularidade:
 1. Clone este repositório.
 2. Crie um ambiente virtual e instale as dependências:
    ```bash
-   pip install pandas sqlalchemy psycopg2-binary
-3. Extraia os arquivos de ".rar" que contem os arquivos .csv com os dados.
+   pip install pandas sqlalchemy psycopg2-binary dbt-postgres==1.9.0
+   ```
+3. Extraia os arquivos `.rar` que contêm os arquivos `.csv` com os dados.
 
 ### Passo 2: Execução da Carga (ETL)
 1. Abra o arquivo ETL.ipynb no VS Code.
 2. Va até o topico 7, no bloco de código que tem "#Preencher com suas informações do Postgre", atualize as credenciais do PostgreSQL (usuario_db, senha_db, etc.) com os dados da sua máquina local.
 3. Execute todas as células. O script cuidará da limpeza e criará as 6 tabelas finais no seu banco de dados.
 
-### Passo 3: Execução da Carga (ELT)
-1. Abra o arquivo ELT.ipynb no VS Code.
-2. Va até o topico 3, no bloco de código que tem "#Preencher com suas informações do Postgre", atualize as credenciais do PostgreSQL (usuario_db, senha_db, etc.) com os dados da sua máquina local.
-3. Execute todas as células. O script cuidará da limpeza e ira mandas a tabela com os dados para o seu banco de dados.
-4. Execute o arquivo tratamento.sql, que ira fazer as transformações e criar as tabelas tratadas.
+### Passo 3: Execução da Carga (ELT com dbt)
+1. Abra o arquivo `ELT.ipynb` no VS Code.
+2. Vá até o tópico 3, no bloco de código que tem `#Preencher com suas informações do Postgre`, atualize as credenciais do PostgreSQL com os dados da sua máquina local.
+3. Execute todas as células. O notebook carregará os dados brutos na tabela `Dados_Bronze` do PostgreSQL.
+4. Configure o perfil do dbt editando `~/.dbt/profiles.yml` com suas credenciais (host, usuário, senha e banco).
+5. Na pasta `local/`, execute o dbt para realizar todas as transformações e criar o modelo dimensional:
+   ```bash
+   cd local
+   dbt run
+   ```
+   O dbt criará automaticamente as tabelas na ordem correta: `stg_bronze` → `int_silver` → dimensões → `fato_energia`.
 
 ## Resultados e Insights
 
