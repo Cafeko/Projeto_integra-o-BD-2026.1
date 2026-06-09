@@ -1,0 +1,7 @@
+# Ignorar ambientes virtuais do Python
+venv/
+.env
+
+# Ignorar pastas de sistema do VS Code
+.vscode/
+__pycache__/
